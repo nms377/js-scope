@@ -45,7 +45,7 @@ function sendDataToClient() {
   var userObject = {
     handle: 'neo',
     authenticated: false
-  }
+  };
 
   function authenticateUser(obj, username) {
     var userObject = {
@@ -53,13 +53,15 @@ function sendDataToClient() {
       authenticated: false
     };
 
-    if (userObject.handle === username) {
-      userObject.authenticated = true;
-      return userObject
+    console.log(obj);
+
+    if (obj.handle === username) {
+      obj.authenticated = true;
+      return userObject.handle = username;
     } else {
-      return userObject
+      return userObject;
     }
   }
-  authenticateUser(userObject, 'neo')
-  return userObject
+ console.log(authenticateUser(userObject, 'neo')); //Wanted to see what would print
+  return userObject;
 }
